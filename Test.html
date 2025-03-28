@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès Sécurisé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Entrez le mot de passe pour voir le message</h2>
+    <input type="password" id="passwordInput" placeholder="Mot de passe">
+    <button onclick="checkPassword()">Valider</button>
+    <p id="message">Félicitations ! Voici ton message secret.</p>
+    
+    <script>
+        function checkPassword() {
+            const correctPassword = "monsecret"; // Définis ici ton mot de passe
+            const userPassword = document.getElementById("passwordInput").value;
+            if (userPassword === correctPassword) {
+                document.getElementById("message").style.display = "block";
+            } else {
+                alert("Mot de passe incorrect !");
+            }
+        }
+    </script>
+</body>
+</html>
